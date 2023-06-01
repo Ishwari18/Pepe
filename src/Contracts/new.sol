@@ -502,15 +502,12 @@ contract PEPESJACKPOT is ERC20, Ownable {
         uint256 ethForMarketing = ethBalance.mul(tokensForMarketing).div(
             totalTokensToSwap
         );
-        uint256 ethForDev = ethBalance.mul(tokensForWeekly).div(totalTokensToSwap);
 
-        uint256 ethForLiquidity = ethBalance - ethForMarketing - ethForDev;
+        uint256 ethForLiquidity = ethBalance - ethForMarketing ;
 
         tokensForLiquidity = 0;
         tokensForMarketing = 0;
         tokensForWeekly = 0;
-
-        (success, ) = address(weeklyWallet).call{value: ethForDev}("");
 
         if (liquidityTokens > 0 && ethForLiquidity > 0) {
             addLiquidity(liquidityTokens, ethForLiquidity);
