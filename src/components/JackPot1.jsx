@@ -4,8 +4,8 @@ import JackPotImg2 from "../assets/jackpot2.png";
 import React, { useState, useEffect } from 'react';
 const { ethers, BigNumber } = require("ethers");
 
-const tokenContractAddress = "0xa5F3D8938d5f4639521535c9b1057D86Aa13C9Af";
-const stakingcontractAddress = "0x1dd63137D6AFE0C02B550bd4798b76c929f20041"
+const tokenContractAddress = "";
+const stakingcontractAddress = ""
 const tokenContractABI = [
 	{
 		"inputs": [],
@@ -1402,7 +1402,7 @@ const stakingcontractABI = [
 			},
 			{
 				"internalType": "address",
-				"name": "_batman",
+				"name": "_tokenAdress",
 				"type": "address"
 			}
 		],
@@ -1490,19 +1490,6 @@ const stakingcontractABI = [
 		"name": "activateRaffle",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "batman",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -1609,6 +1596,19 @@ const stakingcontractABI = [
 	},
 	{
 		"inputs": [],
+		"name": "tokenAdress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "totalTokensStaked",
 		"outputs": [
 			{
@@ -1625,6 +1625,13 @@ const stakingcontractABI = [
 		"name": "unstake",
 		"outputs": [],
 		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{

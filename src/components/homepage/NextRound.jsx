@@ -13,247 +13,254 @@ const styles = {
 export default function NextRound() {
   const [timeLeft, setTimeLeft] = useState(0);
 
-  const stakingcontractAddress = "0x2C4E19b1B46857caa94CF4d219A82dc38C865220";
-  const stakingcontractABI = [
+  const stakingcontractAddress = "";
+  const stakingcontractABI =[
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "_minimumDurationInDays",
-          type: "uint256",
+          "internalType": "uint256",
+          "name": "_minimumDurationInDays",
+          "type": "uint256"
         },
         {
-          internalType: "address",
-          name: "_batman",
-          type: "address",
-        },
+          "internalType": "address",
+          "name": "_tokenAdress",
+          "type": "address"
+        }
       ],
-      stateMutability: "nonpayable",
-      type: "constructor",
+      "stateMutability": "nonpayable",
+      "type": "constructor"
     },
     {
-      anonymous: false,
-      inputs: [
+      "anonymous": false,
+      "inputs": [
         {
-          indexed: true,
-          internalType: "address",
-          name: "winner",
-          type: "address",
+          "indexed": true,
+          "internalType": "address",
+          "name": "winner",
+          "type": "address"
         },
         {
-          indexed: false,
-          internalType: "uint256",
-          name: "amount",
-          type: "uint256",
-        },
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
       ],
-      name: "JackpotWon",
-      type: "event",
+      "name": "JackpotWon",
+      "type": "event"
     },
     {
-      anonymous: false,
-      inputs: [
+      "anonymous": false,
+      "inputs": [
         {
-          indexed: false,
-          internalType: "address",
-          name: "",
-          type: "address",
+          "indexed": false,
+          "internalType": "address",
+          "name": "",
+          "type": "address"
         },
         {
-          indexed: false,
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      name: "Received",
-      type: "event",
+      "name": "Received",
+      "type": "event"
     },
     {
-      anonymous: false,
-      inputs: [
+      "anonymous": false,
+      "inputs": [
         {
-          indexed: true,
-          internalType: "address",
-          name: "staker",
-          type: "address",
+          "indexed": true,
+          "internalType": "address",
+          "name": "staker",
+          "type": "address"
         },
         {
-          indexed: false,
-          internalType: "uint256",
-          name: "amount",
-          type: "uint256",
-        },
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
       ],
-      name: "Staked",
-      type: "event",
+      "name": "Staked",
+      "type": "event"
     },
     {
-      anonymous: false,
-      inputs: [
+      "anonymous": false,
+      "inputs": [
         {
-          indexed: true,
-          internalType: "address",
-          name: "staker",
-          type: "address",
+          "indexed": true,
+          "internalType": "address",
+          "name": "staker",
+          "type": "address"
         },
         {
-          indexed: false,
-          internalType: "uint256",
-          name: "amount",
-          type: "uint256",
-        },
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
       ],
-      name: "Unstaked",
-      type: "event",
+      "name": "Unstaked",
+      "type": "event"
     },
     {
-      inputs: [],
-      name: "activateRaffle",
-      outputs: [],
-      stateMutability: "payable",
-      type: "function",
+      "inputs": [],
+      "name": "activateRaffle",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "batman",
-      outputs: [
+      "inputs": [],
+      "name": "getJackpotBalance",
+      "outputs": [
         {
-          internalType: "address",
-          name: "",
-          type: "address",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "getJackpotBalance",
-      outputs: [
+      "inputs": [],
+      "name": "getStakerAddresses",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "getStakerAddresses",
-      outputs: [
+      "inputs": [],
+      "name": "lastActivationTime",
+      "outputs": [
         {
-          internalType: "address[]",
-          name: "",
-          type: "address[]",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "lastActivationTime",
-      outputs: [
+      "inputs": [],
+      "name": "minimumDuration",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "minimumDuration",
-      outputs: [
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "owner",
-      outputs: [
+      "inputs": [
         {
-          internalType: "address",
-          name: "",
-          type: "address",
-        },
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "name": "stake",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
     },
     {
-      inputs: [
+      "inputs": [
         {
-          internalType: "uint256",
-          name: "amount",
-          type: "uint256",
-        },
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
       ],
-      name: "stake",
-      outputs: [],
-      stateMutability: "payable",
-      type: "function",
-    },
-    {
-      inputs: [
+      "name": "stakers",
+      "outputs": [
         {
-          internalType: "address",
-          name: "",
-          type: "address",
+          "internalType": "uint256",
+          "name": "stakedAmount",
+          "type": "uint256"
         },
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
       ],
-      name: "stakers",
-      outputs: [
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "tokenAdress",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "stakedAmount",
-          type: "uint256",
-        },
-        {
-          internalType: "uint256",
-          name: "timestamp",
-          type: "uint256",
-        },
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "totalTokensStaked",
-      outputs: [
+      "inputs": [],
+      "name": "totalTokensStaked",
+      "outputs": [
         {
-          internalType: "uint256",
-          name: "",
-          type: "uint256",
-        },
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
       ],
-      stateMutability: "view",
-      type: "function",
+      "stateMutability": "view",
+      "type": "function"
     },
     {
-      inputs: [],
-      name: "unstake",
-      outputs: [],
-      stateMutability: "payable",
-      type: "function",
+      "inputs": [],
+      "name": "unstake",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
     },
     {
-      stateMutability: "payable",
-      type: "receive",
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
     },
-  ];
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ]
 
   useEffect(() => {
     const checkJackpotWon = async () => {

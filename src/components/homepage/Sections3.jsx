@@ -1,4 +1,4 @@
-import JackPot2 from "../JackPot2";
+//import JackPot2 from "../JackPot2";
 import SwapComponent from "../SwapComponent";
 
 const styles = {
@@ -15,13 +15,13 @@ export default function Section3() {
         <h1 className={styles.h1}>Purchase Here:</h1>
         <SwapComponent />
       </div>
-      <JackPot2
+      {/* <JackPot2
         p={
           "If there are no purchases of $777 in the amount of $50 or more within an hour after your purchase, then the entirety of the hourly jackpot will automatically be credited to your wallet through our trustless smart contract."
         }
         title={"Hourly Jackpot"}
         second={true}
-      />
+      /> */}
     </section>
   );
 }

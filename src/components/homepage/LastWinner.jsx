@@ -12,7 +12,7 @@ const styles = {
   winnerInfo: "text-center mt-7",
 };
 
-const stakingcontractAddress = "0x2C4E19b1B46857caa94CF4d219A82dc38C865220";
+const stakingcontractAddress = "";
 const stakingcontractABI = [
 	{
 		"inputs": [
@@ -23,7 +23,7 @@ const stakingcontractABI = [
 			},
 			{
 				"internalType": "address",
-				"name": "_batman",
+				"name": "_tokenAdress",
 				"type": "address"
 			}
 		],
@@ -111,19 +111,6 @@ const stakingcontractABI = [
 		"name": "activateRaffle",
 		"outputs": [],
 		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "batman",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -230,6 +217,19 @@ const stakingcontractABI = [
 	},
 	{
 		"inputs": [],
+		"name": "tokenAdress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
 		"name": "totalTokensStaked",
 		"outputs": [
 			{
@@ -246,6 +246,13 @@ const stakingcontractABI = [
 		"name": "unstake",
 		"outputs": [],
 		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
